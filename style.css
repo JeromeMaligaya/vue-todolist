@@ -24,7 +24,7 @@ a{
     text-decoration: line-through;
 }
 
-#list-task > li > span{
+#list-task > li > span, #list-task > li > i{
     cursor: pointer;
 }
 

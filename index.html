@@ -29,15 +29,20 @@
                         <h1>{{ titleCard }}</h1>
                     </div>
                     <div class="card-body text-start">
+                      <div v-if="toDoList.length > 0">
                         <!-- title todolist -->
-                      <h5 class="card-title fs-2">{{ titleList }}</h5>
-                      <ul id="list-task">
-                        <!-- array list-->
-                        <li v-for="( task, index ) in toDoList" :class="{ 'completed': task.isDone }">
-                            <span class="fs-4" @click="isDoneControl(task.isDone, index)"> {{ task.text }} </span>
-                            <i class="fa-regular fa-trash-can ms-3 fs-5" @click="removeTask(index)"></i>
-                        </li>
-                      </ul>
+                        <h5 class="card-title fs-2">{{ titleList }}</h5>
+                        <ul id="list-task">
+                            <!-- array list-->
+                            <li v-for="( task, index ) in toDoList" :class="{ 'completed': task.isDone }">
+                                <span class="fs-4" @click="isDoneControl(task.isDone, index)"> {{ task.text }} </span>
+                                <i class="fa-regular fa-trash-can ms-3 fs-5" @click="removeTask(index)"></i>
+                            </li>
+                        </ul>
+                      </div>
+                      <div v-show="!toDoList.length > 0">
+                        <h2>Hai completato tutti i tuoi compiti! Aggiungi un nuovo argomento da ripassare.</h2>
+                      </div>
                       <!-- add a new task -->
                       <div class="my-3 row justify-content-center gap-2">
                             <input type="text" class="col-4 rounded-2" v-model="newTask" @keyup.enter="addTask(newTask)" placeholder="Digita un nuovo argomento...">
