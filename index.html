@@ -31,10 +31,10 @@
                     <div class="card-body text-start">
                         <!-- title todolist -->
                       <h5 class="card-title fs-2">{{ titleList }}</h5>
-                      <ul>
+                      <ul id="list-task">
                         <!-- array list-->
                         <li v-for="( task, index ) in toDoList" :class="{ 'completed': task.isDone }">
-                            <span class="fs-4"> {{ task.text }} </span>
+                            <span class="fs-4" @click="isDoneControl(task.isDone, index)"> {{ task.text }} </span>
                             <i class="fa-regular fa-trash-can ms-3 fs-5" @click="removeTask(index)"></i>
                         </li>
                       </ul>

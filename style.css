@@ -20,8 +20,12 @@ a{
     text-decoration: none;
 }
 
-.completed{
+#list-task > li.completed{
     text-decoration: line-through;
+}
+
+#list-task > li > span{
+    cursor: pointer;
 }
 
 /*layout*/

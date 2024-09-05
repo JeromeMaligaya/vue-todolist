@@ -22,9 +22,13 @@ createApp({
     addTask(content){
       // push with validation
       if (content) this.toDoList.push({text: content});
-      
+
       console.log({text: this.newTask});
       this.newTask= '';
-    }
+    },
+    isDoneControl(isDone, index){
+      // 'toggle' isDone
+      this.toDoList[index].isDone = !isDone;
+    },
   }
 }).mount('#app')
