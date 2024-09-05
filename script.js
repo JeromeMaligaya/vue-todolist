@@ -14,18 +14,18 @@ console.log('JS OK')
 
 const { createApp } = Vue
 
-  createApp({
-    data() {
-      return {
-        title: 'VUE TODOLIST',
-        message: 'Cose da ripassare:',
-        toDoList:[
-          {text:'html', isDone: false},
-          {text:'css', isDone: false},
-          {text:'bootstrap', isDone: false},
-          {text:'java-script', isDone: false},
-          {text:'js-vue', isDone: false},
-        ]
-      }
-    },
-  }).mount('#app')
+createApp({
+  data() {
+    return {
+      title: 'VUE TODOLIST',
+      message: 'Cose da ripassare:',
+      toDoList:[
+        {text:'html', isDone: false},
+        {text:'css', isDone: false},
+        {text:'bootstrap', isDone: true},
+        {text:'java-script', isDone: false},
+        {text:'js-vue', isDone: false},
+      ]
+    }
+  },
+}).mount('#app')

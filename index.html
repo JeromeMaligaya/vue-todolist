@@ -25,13 +25,16 @@
             <main class="container">
                 <div class="card">
                     <div class="card-header text-start">
+                        <!-- title exercise -->
                         <h1>{{ title }}</h1>
                     </div>
                     <div class="card-body text-start">
+                        <!-- title todolist -->
                       <h5 class="card-title ">{{ message }}</h5>
                       <ul>
-                        <li>
-                            
+                        <!-- array list-->
+                        <li v-for="( task, index ) in toDoList" :class="{ 'completed': task.isDone }">
+                            {{ task.text }}
                         </li>
                       </ul>
                       
