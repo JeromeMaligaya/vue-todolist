@@ -32,3 +32,5 @@ createApp({
     },
   }
 }).mount('#app')
+
+// esercizio finito

@@ -29,6 +29,7 @@
                         <h1>{{ titleCard }}</h1>
                     </div>
                     <div class="card-body text-start">
+                      <!-- v-if -->
                       <div v-if="toDoList.length > 0">
                         <!-- title todolist -->
                         <h5 class="card-title fs-2">{{ titleList }}</h5>
@@ -40,6 +41,7 @@
                             </li>
                         </ul>
                       </div>
+                      <!-- v-show -->
                       <div v-show="!toDoList.length > 0">
                         <h2>Hai completato tutti i tuoi compiti! Aggiungi un nuovo argomento da ripassare.</h2>
                       </div>
@@ -62,5 +64,7 @@
 
     </body>
 </html>
+
+<!-- esercizio finito -->
 
 
