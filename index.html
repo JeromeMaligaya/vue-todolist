@@ -26,11 +26,11 @@
                 <div class="card">
                     <div class="card-header text-start">
                         <!-- title exercise -->
-                        <h1>{{ title }}</h1>
+                        <h1>{{ titleCard }}</h1>
                     </div>
                     <div class="card-body text-start">
                         <!-- title todolist -->
-                      <h5 class="card-title fs-2">{{ message }}</h5>
+                      <h5 class="card-title fs-2">{{ titleList }}</h5>
                       <ul>
                         <!-- array list-->
                         <li v-for="( task, index ) in toDoList" :class="{ 'completed': task.isDone }">
@@ -38,8 +38,11 @@
                             <i class="fa-regular fa-trash-can ms-3 fs-5" @click="removeTask(index)"></i>
                         </li>
                       </ul>
-                               
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <!-- add a new task -->
+                      <div class="my-3 row justify-content-center gap-2">
+                            <input type="text" class="col-4 rounded-2" v-model="newTask" @keyup.enter="addTask(newTask)" placeholder="Digita un nuovo argomento...">
+                            <a href="#" class="btn btn-primary col-4"  @click="addTask(newTask)">Aggiungi</a>
+                      </div>      
                     </div>
                   </div>
             </main>

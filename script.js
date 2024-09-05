@@ -1,36 +1,30 @@
-//Check link
-console.log('JS OK')
-
-// 1.recupero l'elemento dal Dom
-
-
-//2.raccolta dati
-    
-// 3.lavorazione dati
-    
-
-// 4.generazione output
-
-
 const { createApp } = Vue
 
 createApp({
   data() {
     return {
-      title: 'VUE TODOLIST',
-      message: 'Cose da ripassare:',
+      titleCard: 'VUE TODOLIST',
+      titleList: 'Cose da ripassare:',
       toDoList:[
         {text:'html', isDone: false},
         {text:'css', isDone: false},
         {text:'bootstrap', isDone: true},
         {text:'java-script', isDone: false},
         {text:'js-vue', isDone: false},
-      ]
+      ],
+      newTask: '',
     }
   },
   methods: {
     removeTask(index){
-      this.toDoList.splice(index, 1)
+      this.toDoList.splice(index, 1);
+    },
+    addTask(content){
+      // push with validation
+      if (content) this.toDoList.push({text: content});
+      
+      console.log({text: this.newTask});
+      this.newTask= '';
     }
   }
 }).mount('#app')
